@@ -122,6 +122,6 @@ function mostrarAcertou() {
 
 function mostrarErrou() {
     telaPergunta.style.display = "none"
-    telaAcertou.style.display = "block"
+    telaErrou.style.display = "block"
 
 }
