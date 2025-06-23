@@ -35,6 +35,7 @@ telaInicial = document.querySelector(".tela-inicial")
 telaPergunta = document.querySelector(".tela-pergunta")
 telaAcertou = document.querySelector(".tela-acertou")
 telaErrou = document.querySelector(".tela-errou")
+telaFinal = document.querySelector(".tela-final")
 
 botaoIniciar = document.querySelector(".iniciar")
 botaoIniciar.addEventListener("click", iniciarJogo)
@@ -45,12 +46,19 @@ botao0 = document.querySelector(".opcao0");
 botao1 = document.querySelector(".opcao1");
 botao2 = document.querySelector(".opcao2");
 botao3 = document.querySelector(".opcao3");
+reiniciar = document.querySelector(".reiniciar");
 
 perguntaAtual = 0
 
 telaAcertou.addEventListener("click", () => {
     telaAcertou.style.display = "none"
-    iniciarJogo()
+    if (perguntaAtual == 3) {
+        mostrarFinal()
+    }
+    else {
+       iniciarJogo() 
+    }
+    
 })
 
 telaErrou.addEventListener("click", () =>{
@@ -89,6 +97,11 @@ botao3.addEventListener("click", () => {
     } else {
         mostrarErrou()
     }
+})
+
+reiniciar.addEventListener("click", () => {
+    perguntaAtual = 0
+    iniciarJogo()
 })
 
 
@@ -135,5 +148,9 @@ function mostrarAcertou() {
 function mostrarErrou() {
     telaPergunta.style.display = "none"
     telaErrou.style.display = "block"
+}
 
+function mostrarFinal() {
+    telaPergunta.style.display = "none"
+    telaFinal.style.display = "block"
 }
