@@ -102,6 +102,7 @@ botao3.addEventListener("click", () => {
 reiniciar.addEventListener("click", () => {
     perguntaAtual = 0
     iniciarJogo()
+    telaFinal.style.display = "none"
 })
 
 
